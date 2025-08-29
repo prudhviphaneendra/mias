@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access Control For ZR_GRC_MI_CLAIMREG'
+@MappingRole: true
+define role ZR_GRC_MI_CLAIMREG {
+    grant
+        select
+            on
+                ZR_GRC_MI_CLAIMREG
+                    where
+                        (RecordType) = aspect pfcg_auth (Z_MIAS_O, Z_MIRECT_F, ACTVT = '03'); 
+}

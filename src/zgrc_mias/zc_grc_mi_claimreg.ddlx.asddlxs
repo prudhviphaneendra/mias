@@ -1,0 +1,426 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ClaimRegExtId'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ClaimRegExtId'
+annotate view ZC_GRC_MI_CLAIMREG with
+{
+  @UI.facet: [ {
+    label: 'MIAS Claim Register', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ,
+  
+  {
+    label: 'MIAS Claim Transaction', 
+    id: 'Items', 
+    purpose: #STANDARD, 
+    position: 11 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_claim_transaction'
+  }
+  ]
+  @EndUserText.label: 'Record Type'
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Record Type'
+    },
+   { type: #FOR_ACTION, dataAction: 'copyclaimreg', label: 'Clone' }  
+   ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Record Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  recordtype;
+  
+  @EndUserText.label: 'Claim Register External Id'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Claim Register External Id'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Claim Register External Id'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  ClaimRegExtId;
+  
+  @EndUserText.label: 'Asset/Location'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Asset/Location'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Asset/Location'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  AssetLocation;
+  
+  @EndUserText.label: 'Brand/BU'
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'Brand/BU'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+     label: 'Brand/BU'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  BrandBu;
+  
+  @EndUserText.label: 'Close Date'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Close Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Close Date'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  CloseDate;
+  
+  @EndUserText.label: 'Date of Loss'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Date of Loss'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Date of Loss'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  DateOfLoss;
+  
+  @EndUserText.label: 'IBNER'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'IBNER'
+    
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'IBNER'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  IbnerFormula;
+  
+  @EndUserText.label: 'IBNER Adjustment'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'IBNER Adjustment'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'IBNER Adjustment'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  IbnerAdjustment;
+  
+  @EndUserText.label: 'IBNER%'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'IBNER%'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'IBNER%'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Ibner;
+  
+  @EndUserText.label: 'Insurer Claim Number'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Insurer Claim Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Insurer Claim Number'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  InsurerClaimNumber;
+  
+  @EndUserText.label: 'Insurer Claim Number 2'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Insurer Claim Number 2'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Insurer Claim Number 2'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  InsurerClaimNumber2;
+  
+  @UI.identification: [ {
+    position: 120,
+     label: 'Loss Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+     label: 'Loss Description'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+     
+  } ]
+  LossDescription;
+  
+  @UI.identification: [ {
+    position: 130,
+     label: 'MIAS Gross Incurred' 
+    
+  } ]
+  @UI.lineItem: [ {
+    position: 130,
+     label: 'MIAS Gross Incurred' 
+    
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  MiasGrossIncurredFormula;
+  
+  @UI.identification: [ {
+    position: 140 ,
+     label: 'MIAS Gross Incurred' 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 ,
+     label: 'MIAS Gross Incurred' 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  MiasGrossIncurred;
+  
+  @UI.identification: [ {
+    position: 150 , label: 'MIAS Gross Paid' 
+  } ]
+  @UI.lineItem: [ {
+    position: 150  , label: 'MIAS Gross Paid'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  MiasPaid;
+  
+  @UI.identification: [ {
+    position: 160 , label: 'MIAS Gross Reserved excl. IBNER'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , label: 'MIAS Gross Reserved excl. IBNER'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  MiasGrossReservedExclIbner;
+  
+  @UI.identification: [ {
+    position: 170 , label: 'MIAS Net Reserved excl. IBNER'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , label: 'MIAS Net Reserved excl. IBNER'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  MiasNetReservedExclIbner;
+  
+  @UI.identification: [ {
+    position: 180 , label: 'MIAS Net Reserved incl. IBNER'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , label: 'MIAS Net Reserved incl. IBNER'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  MiasNetReservedInclIbnerF;
+  
+  @UI.identification: [ {
+    position: 190 , label: 'MIAS Policy Year'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , label: 'MIAS Policy Year'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  MiasPolicyYear;
+  
+  @EndUserText.label: 'MiasShare'
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'Mias Share'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'Mias Share'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  MiasShare;
+  @EndUserText.label: 'Program'
+  @UI.identification: [ {
+    position: 210 ,
+     label: 'Program'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 ,
+     label: 'Program'
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  Subtype;
+  
+  @UI.identification: [ {
+    position: 220  , label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 220  , label: 'Description'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  Description;
+  
+  @UI.identification: [ {
+    position: 230  , label: 'R/I % (1st Bracket)'
+  } ]
+  @UI.lineItem: [ {
+    position: 230  , label: 'R/I % (1st Bracket)'
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  RI1stBracket;
+  
+  @UI.identification: [ {
+    position: 240  , label: 'R/I Recieved'
+  } ]
+  @UI.lineItem: [ {
+    position: 240  , label: 'R/I Recieved'
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  RITotalRecieved;
+  
+  @UI.identification: [ {
+    position: 250  , label: 'R/I Share'
+  } ]
+  @UI.lineItem: [ {
+    position: 250  , label: 'R/I Share'
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  RITotalShare;
+  
+  @UI.identification: [ {
+    position: 260 , label: 'R/I Share of Gross Reserve'
+  } ]
+  @UI.lineItem: [ {
+    position: 260 , label: 'R/I Share of Gross Reserve'
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  RIShareOfGrossReserve;
+  
+  @UI.identification: [ {
+    position: 270 , label: 'Reinsurance Receivables'
+  } ]
+  @UI.lineItem: [ {
+    position: 270 , label: 'Reinsurance Receivables'
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  ReinsuranceReceivables;
+  
+  @UI.identification: [ {
+    position: 280 , label: 'Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 280  , label: 'Status'
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  Status;
+  
+  @UI.identification: [ {
+    position: 290 
+  } ]
+  @UI.lineItem: [ {
+    position: 290 
+  } ]
+  @UI.selectionField: [ {
+    position: 290 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 300 
+  } ]
+  @UI.lineItem: [ {
+    position: 300 
+  } ]
+  @UI.selectionField: [ {
+    position: 300 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 310 
+  } ]
+  @UI.lineItem: [ {
+    position: 310 
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 320 
+  } ]
+  @UI.lineItem: [ {
+    position: 320 
+  } ]
+  @UI.selectionField: [ {
+    position: 320 
+  } ]
+  Lastchangedat;
+}

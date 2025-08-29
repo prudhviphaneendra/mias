@@ -1,0 +1,51 @@
+managed implementation in class ZBP_R_GRC_MI_CLAIMPCT unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_GRC_MI_CLAIMPCT alias ZrGrcMiClaimpct
+persistent table ZGRC_MI_CLAIMPCT
+extensible
+draft table ZGRC_MI_CLMPCT_D
+etag master Lastchangedat
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( readonly )
+   ClaimPctUuid,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+  field ( numbering : managed )
+   ClaimPctUuid;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZGRC_MI_CLAIMPCT corresponding extensible
+  {
+    ClaimPctUuid = claim_pct_uuid;
+    ProgramName = program_name;
+    ProgramDesc = program_desc;
+    ProgramYear = program_year;
+    Percentage = percentage;
+    Owner = owner;
+    StartDate = start_date;
+    EndDate = end_date;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+
+}

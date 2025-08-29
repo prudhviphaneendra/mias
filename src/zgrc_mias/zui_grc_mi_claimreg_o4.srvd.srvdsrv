@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'MIAS Claim Register'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_GRC_MI_CLAIMREG'
+  }
+}
+define service ZUI_GRC_MI_CLAIMREG_O4
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_MI_CLAIMREG as claim_register;
+  expose ZC_GRC_MI_CLAIMTRN as claim_transaction;
+}

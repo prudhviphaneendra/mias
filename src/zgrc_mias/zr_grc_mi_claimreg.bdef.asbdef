@@ -1,0 +1,149 @@
+managed implementation in class ZBP_R_GRC_MI_CLAIMREG unique;
+strict ( 2 );
+with draft;
+//added by PPT020
+define own authorization context
+{
+  'Z_MIAS_O';
+}
+//ADDEDBY PPT020
+define behavior for ZR_GRC_MI_CLAIMREG alias claim_register
+persistent table ZGRC_MI_CLAIMREG
+draft table ZGRC_MI_CLMREG_D
+etag master Lastchangedat
+lock master total etag Lastchangedat
+authorization master( global,instance )
+{
+
+  create( precheck );
+  update( precheck );
+  delete;
+
+association  _claim_transaction { create ; with draft; }
+
+field( mandatory : create )
+recordtype;
+
+  field ( readonly )
+   ClaimRegUuid,
+   ClaimRegExtId,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+  field ( numbering : managed )
+   ClaimRegUuid;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+
+
+factory action copyclaimreg[1..*];
+
+// determination calculate_fields on modify { create ; } //; field brandbu ; }
+ determination setbrand on modify { create; }
+ determination setpercent on modify { field DateOfLoss;   }
+
+ side effects { field DateOfLoss affects field *; }
+  mapping for ZGRC_MI_CLAIMREG
+  {
+    ClaimRegUuid = claim_reg_uuid;
+    recordtype   = record_type;
+    recordtypedesc = record_typ_desc;
+    ClaimRegExtId = claim_reg_ext_id;
+    AssetLocation = asset_location;
+    BrandBu = brand_bu;
+    CloseDate = close_date;
+    DateOfLoss = date_of_loss;
+    IbnerFormula = ibner_formula;
+    IbnerAdjustment = ibner_adjustment;
+    Ibner = ibner;
+    InsurerClaimNumber = insurer_claim_number;
+    InsurerClaimNumber2 = insurer_claim_number_2;
+    LossDescription = loss_description;
+    MiasGrossIncurredFormula = mias_gross_incurred_formula;
+    MiasGrossIncurred = mias_gross_incurred;
+    MiasPaid = mias_paid;
+    MiasGrossReservedExclIbner = mias_gross_reserved_excl_ibner;
+    MiasNetReservedExclIbner = mias_net_reserved_excl_ibner;
+    MiasNetReservedInclIbnerF = mias_net_reserved_incl_ibner_f;
+    MiasPolicyYear = mias_policy_year;
+    MiasShare = mias_share;
+    Subtype = subtype;
+    Description = description;
+    RI1stBracket = r_i_1st_bracket;
+    RITotalRecieved = r_i_total_recieved;
+    RITotalShare = r_i_total_share;
+    RIShareOfGrossReserve = r_i_share_of_gross_reserve;
+    ReinsuranceReceivables = reinsurance_receivables;
+    Status = status;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}
+
+define behavior for ZR_GRC_MI_CLAIMTRN alias claim_transaction
+persistent table ZGRC_MI_CLAIMTRN
+draft table ZGRC_MI_CLMTRN_D
+etag master Lastchangedat
+lock dependent by _Claim_Register
+authorization dependent by _Claim_Register
+{
+  field ( readonly )
+   ClaimRegUuid,
+   ClaimTranUuid,
+   ClaimTranExtId ,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+  field ( numbering : managed )
+ //  ClaimRegUuid,
+   ClaimTranUuid;
+
+
+
+  update( precheck );
+  delete;
+association _claim_register { with draft; }
+//mapping for ZGRC_MI_CLAIMTRN corresponding except claimreguuid , ClaimTranUuid, ClaimTranExtId  ;
+  mapping for ZGRC_MI_CLAIMTRN
+  {
+    ClaimRegUuid = claim_reg_uuid;
+    ClaimTranUuid = claim_tran_uuid;
+    ClaimTranExtId = claim_tran_ext_id;
+    AccountingDate = accounting_date;
+    AccountingMonth = accounting_month;
+    AccountingQuarter = accounting_quarter;
+    Amount = amount;
+    RI1Comment = r_i_1_comment;
+    MiasRIYN = mias_r_i_y_n;
+    Subtype = subtype;
+    Description = description;
+    RIAmount1 = r_i_amount_1;
+    RIAmount2 = r_i_amount_2;
+    RIAmount3 = r_i_amount_3;
+    RIAmount4 = r_i_amount_4;
+    RIAmount5 = r_i_amount_5;
+    RIPercent1 = r_i_percent_1;
+    RIPercent2 = r_i_percent_2;
+    RIPercent3 = r_i_percent_3;
+    RIPercent4 = r_i_percent_4;
+    RIPercent5 = r_i_percent_5;
+    RITotalAmount = r_i_total_amount;
+    ReinsuranceShare = reinsurance_share;
+    Type = type;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}

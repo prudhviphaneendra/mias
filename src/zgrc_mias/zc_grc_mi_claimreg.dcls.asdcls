@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control For ZC_GRC_MI_CLAIMREG'
+@MappingRole: true
+define role ZC_GRC_MI_CLAIMREG {
+    grant
+        select
+            on
+                ZC_GRC_MI_CLAIMREG
+                   where
+                        inheriting conditions from entity ZR_GRC_MI_CLAIMREG;
+                        
+}

@@ -1,0 +1,389 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ClaimTranExtId'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ClaimTranExtId'
+annotate view ZC_GRC_MI_CLAIMTRN with
+{
+  @EndUserText.label: 'ClaimRegUuid'
+  @UI.facet: [ {
+    label: 'MIAS Claim Transaction', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'ClaimRegUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'ClaimRegUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  @UI: { hidden: true }
+  ClaimRegUuid;
+  
+  @EndUserText.label: 'ClaimTranUuid'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'ClaimTranUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'ClaimTranUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+   @UI: { hidden: true }
+  ClaimTranUuid;
+  
+  @EndUserText.label: 'Claim Transaction External Id'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Claim Transaction External Id'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Claim Transaction External Id'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  
+  ClaimTranExtId;
+  
+  @EndUserText.label: 'Accounting Date'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Accounting Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Accounting Date'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  AccountingDate;
+  
+  @EndUserText.label: 'Accounting Month'
+  @UI.identification: [ {
+    position: 50 , label: 'Accounting Month'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , label: 'Accounting Month'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  AccountingMonth;
+  
+  @EndUserText.label: 'Accounting Quarter'
+  @UI.identification: [ {
+    position: 60  , label: 'Accounting Quarter'
+  } ]
+  @UI.lineItem: [ {
+    position: 60  , label: 'Accounting Quarter'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  AccountingQuarter;
+  
+  @EndUserText.label: 'Amount'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Amount'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Amount;
+  
+  @EndUserText.label: 'Comment'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Comment'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Comment'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  RI1Comment;
+  
+  @EndUserText.label: 'MIAS R/I (Y/N)'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'MIAS R/I (Y/N)'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'MIAS R/I (Y/N)'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  MiasRIYN;
+  
+  @EndUserText.label: 'Program'
+  @UI.identification: [ {
+    position: 100 , label: 'Program'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , label: 'Program'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  Subtype;
+  
+  @EndUserText.label: 'Program Description'
+  @UI.identification: [ {
+    position: 110 ,   label: 'Program Description'  
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , label: 'Program Description'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  Description;
+  
+  @EndUserText.label: 'R/I Amount 1'
+  @UI.identification: [ {
+    position: 120 , 
+     label: 'R/I Amount 1'
+  } ]
+  @UI.lineItem: [ {
+    position: 120,  label: 'R/I Amount 1' 
+    
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  RIAmount1;
+  
+  @EndUserText.label: 'R/I Amount 2'
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'R/I Amount 2'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'R/I Amount 2'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  RIAmount2;
+  
+  @EndUserText.label: 'R/I Amount 3'
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'R/I Amount 3'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'R/I Amount 3'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  RIAmount3;
+  
+  @EndUserText.label: 'R/I Amount 4'
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'R/I Amount 4'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'R/I Amount 4'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  RIAmount4;
+  
+  @EndUserText.label: 'R/I Amount 5'
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'R/I Amount 5'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'R/I Amount 5'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  RIAmount5;
+  
+  @EndUserText.label: 'R/I Percent 1'
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'R/I Percent 1'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'R/I Percent 1'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  RIPercent1;
+  
+  @EndUserText.label:  'R/I Percent 2'
+  @UI.identification: [ {
+    position: 180 , 
+    label:  'R/I Percent 2'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label:  'R/I Percent 2'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  RIPercent2;
+  
+  @EndUserText.label:  'R/I Percent 3'
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'R/I Percent 3'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'R/I Percent 3'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  RIPercent3;
+  
+  @EndUserText.label: 'R/I Percent 4'
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'R/I Percent 4'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'R/I Percent 4'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  RIPercent4;
+  
+  @EndUserText.label: 'R/I Percent 5'
+  @UI.identification: [ {
+    position: 210 , 
+    label: 'R/I Percent 5'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 , 
+    label: 'R/I Percent 5'
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  RIPercent5;
+  
+    @EndUserText.label: 'R/I Total Amount'
+  @UI.identification: [ {
+    position: 220 , 
+    label:  'R/I Total Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 , 
+    label:  'R/I Total Amount'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  RITotalAmount;
+  
+   @EndUserText.label: 'Reinsurance Share'
+  @UI.identification: [ {
+    position: 230 , 
+    label:  'Reinsurance Share'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 , 
+    label:  'Reinsurance Share'
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  ReinsuranceShare;
+  
+   @EndUserText.label: 'Type'
+  @UI.identification: [ {
+    position: 240 , 
+    label:  'Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 240 , 
+    label:  'Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  Type;
+  
+  @UI.identification: [ {
+    position: 250 
+  } ]
+  @UI.lineItem: [ {
+    position: 250 
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 260 
+  } ]
+  @UI.lineItem: [ {
+    position: 260 
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 270 
+  } ]
+  @UI.lineItem: [ {
+    position: 270 
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 280 
+  } ]
+  @UI.lineItem: [ {
+    position: 280 
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  Lastchangedat;
+}
